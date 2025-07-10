@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Captain Designs | Stylish Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+  <style>
+    :root {
+      --primary: #005f73;
+      --accent: #fca311;
+      --background: #fefefe;
+      --text: #14213d;
+      --muted: #e5e5e5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #fefefe;
+    }
+
+    header {
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .dark-mode header {
+      background-color: #222;
+    }
+
+    nav a {
+      margin-left: 1rem;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .dark-mode nav a {
+      color: #eee;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .theme-toggle {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, #edf6f9, #fff);
+    }
+
+    .hero img {
+      max-width: 300px;
+      border-radius: 50%;
+      margin-top: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+    }
+
+    .swiper {
+      width: 100%;
+      padding: 2rem 0;
+    }
+
+    .swiper-slide {
+      background: #f9f9f9;
+      padding: 2rem;
+      border-radius: 10px;
+      border-left: 5px solid var(--primary);
+      font-style: italic;
+    }
+
+    .services div {
+      background: var(--muted);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .experience ul {
+      list-style: none;
+    }
+
+    .experience li {
+      padding: 1rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .portfolio {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .portfolio img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio img:hover {
+      transform: scale(1.03);
+    }
+
+    footer {
+      padding: 2rem;
+      background: var(--text);
+      color: white;
+      text-align: center;
+    }
+
+    .contact-form {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background: var(--primary);
+      color: #fff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: var(--accent);
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp-float img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .typed-text {
+      font-weight: bold;
+      color: var(--primary);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .cursor {
+      display: inline-block;
+      background-color: var(--primary);
+      width: 1px;
+      animation: blink 0.7s steps(1) infinite;
+      margin-left: 5px;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 1rem;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .hero img {
+        width: 90%;
+        max-width: 250px;
+      }
+
+      .section {
+        padding: 1.5rem 1rem;
+      }
+
+      .section h2 {
+        font-size: 1.25rem;
+      }
+
+      .contact-form {
+        padding: 1rem;
+        margin: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        font-size: 0.95rem;
+        padding: 0.75rem;
+      }
+
+      .contact-form button {
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .swiper-slide {
+        font-size: 0.9rem;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        font-size: 0.85rem;
+        padding: 1rem;
+      }
+
+      .whatsapp-float {
+        bottom: 15px;
+        right: 15px;
+        padding: 12px;
+      }
+
+      .whatsapp-float img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    #backToTop {
+      display: none;
+      opacity: 0;
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      z-index: 1000;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background-color 0.3s ease, opacity 0.5s ease;
+    }
+
+    #backToTop:hover {
+      background-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <header data-aos="fade-down">
+    <div><strong>Captain Designs</strong></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#works">Works</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+      <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="zoom-in">
+    <div>
+      <h1><span class="typed-text"></span><span class="cursor">|</span></h1>
+      <p>I design beautifully simple things. And I love what I do.</p>
+      <img src="photos\download (7).jpeg" alt="Captain Designs" />
+    </div>
+  </section>
+
+  <section id="services" class="section services" data-aos="fade-up">
+    <h2>What do I help?</h2>
+    <div>Crafting eye-catching logos and brand identities</div>
+    <div>Designing clean and modern flyers, posters & brochures</div>
+    <div>Creating sleek social media graphics</div>
+    <div>Developing engaging web and app UI designs</div>
+      <div>Bringing your ideas to life with custom visuals</div>  
+       
+  </section>
+
+  <section id="experience" class="section experience" data-aos="fade-up">
+    <h2>My Work Experience</h2>
+    <ul>
+      <li><strong>Visual Designer</strong> – Self-Employed, 2020–Now</li>
+      
+      <li><strong>Product Designer</strong> – MK holdings, 2022–Now</li>
+    </ul>
+  </section>
+
+  <section id="works" class="section" data-aos="fade-up">
+    <h2>My Latest Works</h2>
+    <div class="portfolio">
+      <img src="photos/Where Every Tank Tells a Story.png" alt="App Design">
+      <img src="photos/Tech full.png" alt="Web Design">
+      <img src="photos\MIRANYI.png" alt="Brand Identity">
+      <img src="photos\EMBU.png" alt="Brand Identity">
+      <img src="photos/M.png" alt="Brand Identity">
+      
+    </div>
+  </section>
+
+  <section class="section testimonials" data-aos="fade-up">
+    <h2>People talk about us</h2>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">"Captain Designs delivered a bold and professional logo that truly represents MK Holdings. Clean, modern, and exactly what we envisioned. Fast delivery and great communication throughout!"
+
+— Brian Matara, MK Holdings"
+
+
+</div>
+        <div class="swiper-slide">"Kazi safii sana brooo!!!" – Farady Ondimu</div>
+        <div class="swiper-slide">"Bro, God bless you sana. The church banner was so beautiful, people couldn’t stop talking. You truly have a gift. Tunashukuru sana!"
+— Elder Mugo, Deliverance Church Embu"</div>
+        <div class="swiper-slide">"They understood our brand and delivered stunning visuals on time." – Chrispus Moseti-Credit Admin KCB bank</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Let's make something amazing together.</h2>
+    <p>Start by <strong style="color: var(--accent);">saying hi</strong></p>
+    <form class="contact-form" onsubmit="return validateContactForm()">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" rows="6" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <a href="https://wa.me/254710988812" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat on WhatsApp">
+  </a>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 Captain Designs. All Rights Reserved.</p>
+  </footer>
+
+  <button id="backToTop" title="Go to top">↑</button>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script>
+    AOS.init();
+
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 4000,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const typedText = document.querySelector(".typed-text");
+      const cursor = document.querySelector(".cursor");
+      const words = [
+        "Hey there, I'm Captain.",
+        "I design stunning brands.",
+        "I love clean UI/UX.",
+        "Let's build something creative!",
+        "Welcome to my portfolio."
+      ];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      function type() {
+        const currentWord = words[wordIndex];
+        const currentText = currentWord.substring(0, charIndex);
+        typedText.textContent = currentText;
+
+        if (!isDeleting && charIndex < currentWord.length) {
+          charIndex++;
+          setTimeout(type, 100);
+        } else if (isDeleting && charIndex > 0) {
+          charIndex--;
+          setTimeout(type, 50);
+        } else {
+          isDeleting = !isDeleting;
+          if (!isDeleting) {
+            wordIndex = (wordIndex + 1) % words.length;
+          }
+          setTimeout(type, 1200);
+        }
+      }
+
+      type();
+    });
+
+    
+  function validateContactForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill out all fields.');
+      return false;
+    }
+
+    const phoneNumber = "254710988812"; // your WhatsApp number without the + sign
+    const text = `Hello Captain, I just sent a message via your website:
+    
+🧑 Name: ${name}
+📧 Email: ${email}
+📝 Message: ${message}`;
+
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+
+    window.open(url, "_blank");
+
+    return false; // prevent actual form submission
+  }
+
+
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.onscroll = function () {
+      if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        backToTopBtn.style.display = "block";
+        setTimeout(() => backToTopBtn.style.opacity = "1", 10);
+      } else {
+        backToTopBtn.style.opacity = "0";
+        setTimeout(() => backToTopBtn.style.display = "none", 500);
+      }
+    };
+
+    backToTopBtn.onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+</html>
+
+
