@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Captain Designs </title>
+  <title>Captain Designs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
@@ -161,6 +161,26 @@
       transform: scale(1.03);
     }
 
+    /* Pagination styling */
+    .pagination {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .pagination button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .pagination button:hover {
+      background: var(--accent);
+    }
+
     footer {
       padding: 2rem;
       background: var(--text);
@@ -238,17 +258,8 @@
     }
 
     @keyframes blink {
-      0%, 50% {
-        opacity: 1;
-      }
-      51%, 100% {
-        opacity: 0;
-      }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
 
     @media (max-width: 480px) {
@@ -264,66 +275,10 @@
         gap: 0.5rem;
       }
 
-      .hero h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero p {
-        font-size: 1rem;
-      }
-
-      .hero img {
-        width: 90%;
-        max-width: 250px;
-      }
-
-      .section {
-        padding: 1.5rem 1rem;
-      }
-
-      .section h2 {
-        font-size: 1.25rem;
-      }
-
-      .contact-form {
-        padding: 1rem;
-        margin: 1rem;
-      }
-
-      .contact-form input,
-      .contact-form textarea {
-        font-size: 0.95rem;
-        padding: 0.75rem;
-      }
-
-      .contact-form button {
-        font-size: 1rem;
-        width: 100%;
-      }
-
-      .swiper-slide {
-        font-size: 0.9rem;
-      }
-
-      .portfolio {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        font-size: 0.85rem;
-        padding: 1rem;
-      }
-
-      .whatsapp-float {
-        bottom: 15px;
-        right: 15px;
-        padding: 12px;
-      }
-
-      .whatsapp-float img {
-        width: 24px;
-        height: 24px;
-      }
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 1rem; }
+      .hero img { width: 90%; max-width: 250px; }
+      .portfolio { grid-template-columns: 1fr; }
     }
 
     #backToTop {
@@ -366,7 +321,7 @@
     <div>
       <h1><span class="typed-text"></span><span class="cursor">|</span></h1>
       <p>We design beautifully simple things. And we love what we do.</p>
-      <img src="photos\download (7).jpeg" alt="Captain Designs" />
+      <img loading="lazy" src="photos/download (7).jpeg" alt="Captain Designs" />
     </div>
   </section>
 
@@ -376,35 +331,38 @@
     <div>Designing clean and modern flyers, posters & brochures</div>
     <div>Creating sleek social media graphics</div>
     <div>Developing engaging web and app UI designs</div>
-      <div>Bringing your ideas to life with custom visuals</div>  
-       
+    <div>Bringing your ideas to life with custom visuals</div>
   </section>
 
   <section id="experience" class="section experience" data-aos="fade-up">
     <h2>My Work Experience</h2>
     <ul>
       <li><strong>Visual Designer</strong> – Self-Employed, 2020–Now</li>
-      
-      <li><strong>Product Designer</strong> – MK holdings, 2022–Now</li>
+      <li><strong>Product Designer</strong> – MK Holdings, 2022–Now</li>
     </ul>
   </section>
 
   <section id="works" class="section" data-aos="fade-up">
     <h2>My Latest Works</h2>
     <div class="portfolio">
-      <img src="photos/Where Every Tank Tells a Story.png" alt="App Design">
-      <img src="photos/Tech full.png" alt="Web Design">
-      <img src="photos\MIRANYI.png" alt="Brand Identity">
-      <img src="photos\Stone Logo Mockup.png" alt="Brand Identity">
-      <img src="photos/M.png" alt="Brand Identity">
-       <img src="photos\captain.png" alt="Brand Identity">
-      <img src="photos\Jay dee.png" alt="Brand Identity">
-         <img src="photos\@Second Chance Store11.png" alt="Brand Identity">
-         <img src="photos\Add a heading7.png" alt="Brand Identity">
-        <img src="photos\Learning with.png" alt="Brand Identity">
-        <img src="photos\shawarma plac3.png" alt="Brand Identity">
-      <img src="photos\Black_Brush_Stroke_Label_Banner_Design__Brush_Stroke__Black__Label_PNG_Transparent_Clipart_Image_and_PSD_File_for_Free_Download-removebg-preview (1).png" alt="Brand Identity">
-      
+      <img loading="lazy" src="photos/Where Every Tank Tells a Story.png" alt="App Design">
+      <img loading="lazy" src="photos/Tech full.png" alt="Web Design">
+      <img loading="lazy" src="photos/MIRANYI.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/Stone Logo Mockup.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/M.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/captain.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/Jay dee.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/@Second Chance Store11.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/Add a heading7.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/Learning with.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/shawarma plac3.png" alt="Brand Identity">
+      <img loading="lazy" src="photos/Black_Brush_Stroke_Label_Banner_Design__Brush_Stroke__Black__Label_PNG_Transparent_Clipart_Image_and_PSD_File_for_Free_Download-removebg-preview (1).png" alt="Brand Identity">
+    </div>
+
+    <div class="pagination">
+      <button id="prevPage">Prev</button>
+      <span id="pageIndicator"></span>
+      <button id="nextPage">Next</button>
     </div>
   </section>
 
@@ -412,17 +370,12 @@
     <h2>People talk about us</h2>
     <div class="swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">"Captain Designs delivered a bold and professional logo that truly represents MK Holdings. Clean, modern, and exactly what we envisioned. Fast delivery and great communication throughout!"
-
-— Brian Matara, MK Holdings"
-
-
-</div>
+        <div class="swiper-slide">"Captain Designs delivered a bold and professional logo that truly represents MK Holdings. Clean, modern, and exactly what we envisioned. Fast delivery and great communication!" — Brian Matara, MK Holdings</div>
         <div class="swiper-slide">"Kazi safii sana brooo!!!" – Farady Ondimu</div>
-        <div class="swiper-slide">"Bro, God bless you sana. The church banner was so beautiful, . Tunashukuru sana!"
-— Elder Mugo, Deliverance Church Embu"</div>
-        <div class="swiper-slide">"They understood our brand and delivered stunning visuals on time." – Chrispus Moseti-Credit Admin KCB bank</div>
+        <div class="swiper-slide">"Bro, God bless you sana. The church banner was so beautiful. Tunashukuru sana!" — Elder Mugo, Deliverance Church Embu</div>
+        <div class="swiper-slide">"They understood our brand and delivered stunning visuals on time." – Chrispus Moseti, KCB Bank</div>
       </div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -454,34 +407,25 @@
 
     new Swiper('.swiper', {
       loop: true,
-      autoplay: {
-        delay: 4000,
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
+      autoplay: { delay: 4000 },
+      pagination: { el: '.swiper-pagination', clickable: true }
     });
 
     document.addEventListener("DOMContentLoaded", () => {
       const typedText = document.querySelector(".typed-text");
-      const cursor = document.querySelector(".cursor");
       const words = [
         "Hey there, What do you want to design today?",
-        "we design stunning brands.",
-        "we love clean UI/UX.",
+        "We design stunning brands.",
+        "We love clean UI/UX.",
         "Let's build something creative!",
         "Welcome to our portfolio."
       ];
-      let wordIndex = 0;
-      let charIndex = 0;
-      let isDeleting = false;
+      let wordIndex = 0, charIndex = 0, isDeleting = false;
 
       function type() {
         const currentWord = words[wordIndex];
         const currentText = currentWord.substring(0, charIndex);
         typedText.textContent = currentText;
-
         if (!isDeleting && charIndex < currentWord.length) {
           charIndex++;
           setTimeout(type, 100);
@@ -490,49 +434,35 @@
           setTimeout(type, 50);
         } else {
           isDeleting = !isDeleting;
-          if (!isDeleting) {
-            wordIndex = (wordIndex + 1) % words.length;
-          }
+          if (!isDeleting) wordIndex = (wordIndex + 1) % words.length;
           setTimeout(type, 1200);
         }
       }
-
       type();
     });
 
-    
-  function validateContactForm() {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    function validateContactForm() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
 
-    if (!name || !email || !message) {
-      alert('Please fill out all fields.');
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return false;
+      }
+
+      const phoneNumber = "254710988812";
+      const text = `Hello Captain, I just sent a message via your website:\n\nName: ${name}\n📧 Email: ${email}\n📝 Message: ${message}`;
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+      window.open(url, "_blank");
       return false;
     }
-
-    const phoneNumber = "254710988812"; // your WhatsApp number without the + sign
-    const text = `Hello Captain, I just sent a message via your website:
-    
- Name: ${name}
-📧 Email: ${email}
-📝 Message: ${message}`;
-
-    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-
-    window.open(url, "_blank");
-
-    return false; // prevent actual form submission
-  }
-
-
 
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
     }
 
     const backToTopBtn = document.getElementById("backToTop");
-
     window.onscroll = function () {
       if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
         backToTopBtn.style.display = "block";
@@ -546,8 +476,37 @@
     backToTopBtn.onclick = function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // Portfolio Pagination
+    const portfolio = document.querySelector('.portfolio');
+    const images = portfolio.querySelectorAll('img');
+    const itemsPerPage = 10;
+    let currentPage = 1;
+    const totalPages = Math.ceil(images.length / itemsPerPage);
+    const prevBtn = document.getElementById('prevPage');
+    const nextBtn = document.getElementById('nextPage');
+    const pageIndicator = document.getElementById('pageIndicator');
+
+    function showPage(page) {
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      images.forEach((img, index) => {
+        img.style.display = (index >= start && index < end) ? 'block' : 'none';
+      });
+      pageIndicator.textContent = `Page ${page} of ${totalPages}`;
+      prevBtn.disabled = page === 1;
+      nextBtn.disabled = page === totalPages;
+    }
+
+    prevBtn.addEventListener('click', () => {
+      if (currentPage > 1) { currentPage--; showPage(currentPage); }
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentPage < totalPages) { currentPage++; showPage(currentPage); }
+    });
+
+    showPage(currentPage);
   </script>
 </body>
 </html>
-
-
